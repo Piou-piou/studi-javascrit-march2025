@@ -1,50 +1,45 @@
-// définition des varaibles
-let boite = 'ma boite';
-const etagere = 'mon étagère';
+// fonction qui permet de calculer la moyenne en fonction d'un tableau de note
+function calculMoyenne(notes) {
+  let totalNote = null;
 
-// console.log('coucou la console');
+  for (const note of notes) {
+    if (totalNote == null) {
+      totalNote = note;
+    } else {
+      totalNote += note;
+    }
+  }
 
-
-if (boite == 'ma boite') {
-  let boite2 = 'ma boite 2';
-  // console.log(boite2);
-  boite2 = 'ma nouvelle boite 2';
-  // console.log(boite2);
-
-  const etagere2 = 'mon etagere 2';
+  return (totalNote / notes.length).toFixed(2);
 }
 
-// impossible afficher variable car portée des let uniquement dans le bloc et bloc enfant
-//console.log(etagere2);
+const notesLaurent = [10, 15, 8, 12, 14.5, 13.5];
+const notesPierre = [12.5, 8, 9, 10];
 
+const moyenneLaurent = calculMoyenne(notesLaurent);
+const moyennePierre = calculMoyenne(notesPierre);
 
-// définition tableau
-let marquesVoiture = ['Peugeot', 'Citroen'];
-marquesVoiture.push('Audi');
-//console.table(marquesVoiture);
-
-// boucle for of et marque change de valeur à chaque tour
-// la boucle s'arrête après le dernier élément du tableau
-// marque peut etre une const ou un let tout dépend de si on doit modifier sa valeur
-for (const marque of marquesVoiture) {
-  //console.log(marque);
-}
-
-// boucle for in utilise l'index du tableau pour parcourir chaque élément
-// à utiliser sur des objets (on les verra plus tard)
-for (const index in marquesVoiture) {
-  //console.log(index);
-  //console.log(marquesVoiture[index]);
-}
-
-// ici la boucle for possède un varaible i qui va s'incrémenter à chaque itération (tour de boucle)
-console.log(marquesVoiture.length);
-for (let i = 0 ; i < marquesVoiture.length ; i++) {
-  //console.log(marquesVoiture[i]);
+if (moyenneLaurent >= 15) {
+  console.log('Bravo vous avez les félicitations');
+} else if (moyenneLaurent >= 13 && moyenneLaurent < 15) {
+  console.log('Bravo vous avez les compliments');
+} else if (moyenneLaurent >= 10 && moyenneLaurent < 13) {
+  console.log('Bravo vous avez les encouragement');
+} else {
+  console.log('Vous avez encore du travail à faire');
 }
 
 
-// écrire un petit programme permettant de calculer la moyenne des notes suivantes :
-// pnesez boucle, portée des variables
-// le must une fonction calculMoyenne();
-const notes = [10, 15, 8, 12, 14.5, 13.5];
+
+// Bonus avec objet au lieu de tableau
+/*
+const notesEleves = {
+  pierre: [12.5, 8, 9, 10],
+  laurent: [10, 15, 8, 12, 14.5, 13.5],
+};
+
+for (const eleve in notesEleves) {
+  console.log(`La moyenne de ${eleve} est de ${calculMoyenne(notesEleves[eleve])}`)
+}
+
+console.log(calculMoyenne(notesEleves.laurent))*/
