@@ -1,52 +1,39 @@
-const maDiv = document.getElementById('ma-div');
-const maDivSelector = document.querySelector('div');
+const modalLayer = document.getElementById('modal-layer');
 
-// maDiv.innerText = 'mon texte';
-// maDiv.innerHTML = '<span></span>'
-//
-// maDiv.style.marginTop = '10px';
-// maDiv.classList.add('autre-class');
+document.querySelectorAll('[data-modal]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
 
-maDiv.addEventListener('click', (event) => {
-  const element = event.currentTarget;
+    const element = event.currentTarget;
 
-  element.classList.toggle('clicked');
-});
+    const modal = document.getElementById(element.dataset.modal);
+    if (modal) {
+      // passage de display none à block directement
+      modalLayer.classList.add('active');
+      modal.classList.add('active');
 
-
-const carreBleus = document.querySelectorAll('body > div.carre-bleu');
-
-for (const carreBleu of carreBleus) {
-  console.log(carreBleu);
-}
-
-console.log('----');
-
-carreBleus.forEach((carreBleu) => {
-  carreBleu.addEventListener('mouseover', (event) => {
-    const target = event.currentTarget;
-    target.style.background = 'green';
-  });
-
-  carreBleu.addEventListener('mouseleave', (event) => {
-    const target = event.currentTarget;
-    target.style.removeProperty('background');
+      // on attend 10ms que le passage en block se fasse puis on joue notre animation avec l'ajout de .animate
+      setTimeout(() => {
+        modalLayer.classList.add('animate');
+        modal.classList.add('animate');
+      }, 10);
+    }
   });
 });
 
+document.querySelectorAll('.modal [data-close]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const element = event.currentTarget;
 
-const googleLink = document.querySelector('#google-link');
-googleLink.addEventListener('click', (event) => {
-  event.preventDefault();
+    // quand on ferme, on enlève d'abord animate pour jouer l'animation
+    element.closest('.modal').classList.remove('animate');
+    modalLayer.classList.remove('animate');
 
-  const maDiv = document.getElementById('ma-div');
-  maDiv.classList.add('clicked');
-});
-
-
-
-// Exo
-// a partir d'un element input type number avec l'id number1
-// et d'un  autre element input type number avec l'id number2
-// en javascript multiplier les 2 nombre entre eux
-// afficher le résultat dans une div avec l'id resultat
+    // on attend le temps de l'animation dans .animate avant de virer .active pour repasser en display none
+    setTimeout(() => {
+      element.closest('.modal').classList.remove('active');
+      modalLayer.classList.remove('active');
+    }, 1100);
+  });
+})

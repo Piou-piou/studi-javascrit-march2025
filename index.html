@@ -13,12 +13,24 @@
         <title>Document</title>
     </head>
     <body>
-        <div id="ma-div"></div>
+        <a href="" data-modal="accept_licence">Ouvrir la modal de la licence</a>
+        <a href="test.html" data-modal="show_condition">Ouvrir la modal des conditions</a>
 
-        <div class="carre-bleu"></div>
-        <div class="carre-bleu"></div>
-        <div class="carre-bleu"></div>
+        <div id="modal-layer"></div>
+        <div id="accept_licence" class="modal">
+            <header>
+                <a href="#" data-close>Fermer la modal</a>
+            </header>
+        </div>
 
-        <a id="google-link" href="https://google.fr" target="_blank">Lien vers Google</a>
+        <div id="show_condition" class="modal">
+            <header>
+                <a href="#" data-close>Fermer la modal</a>
+            </header>
+
+            <div class="modal-body">
+                <p>dgdfg</p>
+            </div>
+        </div>
     </body>
 </html>
