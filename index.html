@@ -6,13 +6,32 @@
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/modal.css">
+        <link rel="stylesheet" href="assets/css/form.css">
 
-        <script src="assets/js/app.js" defer></script>
+        <script src="assets/js/modal.js" defer></script>
+        <script src="assets/js/formValidation.js" defer></script>
 
         <title>Document</title>
     </head>
     <body>
+        <form action="test.php" method="post" id="registration-form">
+            <div>
+                <label for="firstname">Prénom</label>
+                <input type="text" id="firstname" name="firstname" minlength="3" data-error="Le prénom doit être de minimum 3 caractères">
+                <div class="error"></div>
+            </div>
+            <div>
+                <label for="lastname">Nom</label>
+                <input type="text" id="lastname" name="lastname" minlength="3" data-error="Le nom doit être de minimum 3 caractères">
+                <div class="error"></div>
+            </div>
+
+            <button type="submit">Valider</button>
+        </form>
+
+
+
         <a href="" data-modal="accept_licence">Ouvrir la modal de la licence</a>
         <a href="test.html" data-modal="show_condition">Ouvrir la modal des conditions</a>
 

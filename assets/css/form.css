@@ -1,0 +1,13 @@
+form {
+    margin-bottom: 20px;
+}
+
+form .error {
+    color: red;
+    line-height: 1.5;
+    height: 25px;
+}
+
+input:invalid, input.invalid {
+    border: 1px solid red;
+}
