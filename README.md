@@ -9,3 +9,5 @@ Live 3 code : https://github.com/Piou-piou/studi-javascrit-march2025/tree/715661
 Live 4 code : https://github.com/Piou-piou/studi-javascrit-march2025/tree/73e079726e99b0f613573c92b726979e8cb8d985
 
 Live 5 code : https://github.com/Piou-piou/studi-javascrit-march2025/tree/ffa13c5583e0c150b2418a6b7d4ca46e83eab43f
+
+Live 6 code : https://github.com/Piou-piou/studi-javascrit-march2025/tree/767c257b3ed75a1015702837430f1ed478d970e6
