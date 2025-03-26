@@ -2,12 +2,16 @@ form {
     margin-bottom: 20px;
 }
 
-form .error {
+form div.error {
     color: red;
     line-height: 1.5;
     height: 25px;
 }
 
-input:invalid, input.invalid {
+form input:invalid, form input.invalid {
     border: 1px solid red;
+}
+
+form input.success {
+    border: 1px solid green;
 }

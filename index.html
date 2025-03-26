@@ -18,19 +18,27 @@
         <form action="test.php" method="post" id="registration-form">
             <div>
                 <label for="firstname">Prénom</label>
-                <input type="text" id="firstname" name="firstname" minlength="3" data-error="Le prénom doit être de minimum 3 caractères">
+                <input type="text" id="firstname" name="firstname" minlength="3" data-error="Le prénom doit être de minimum 3 caractères" required>
                 <div class="error"></div>
             </div>
             <div>
                 <label for="lastname">Nom</label>
-                <input type="text" id="lastname" name="lastname" minlength="3" data-error="Le nom doit être de minimum 3 caractères">
+                <input type="text" id="lastname" name="lastname" minlength="3" data-error="Le nom doit être de minimum 3 caractères" required>
+                <div class="error"></div>
+            </div>
+            <div>
+                <label for="email">Mail</label>
+                <input type="email" id="email" name="email" data-error="Le mail doit être un mail valide">
+                <div class="error"></div>
+            </div>
+            <div>
+                <label for="phone">Telephone</label>
+                <input type="tel" id="phone" name="phone" data-error="Le téléphone doit être valide">
                 <div class="error"></div>
             </div>
 
             <button type="submit">Valider</button>
         </form>
-
-
 
         <a href="" data-modal="accept_licence">Ouvrir la modal de la licence</a>
         <a href="test.html" data-modal="show_condition">Ouvrir la modal des conditions</a>
